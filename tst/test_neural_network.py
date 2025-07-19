@@ -42,9 +42,7 @@ class TestNeuralNetwork(unittest.TestCase):
         y[np.arange(10), np.random.randint(0, 3, 10)] = 1
 
         loss_before = np.mean(np.square(y - self.nn.forward(X)))
-        self.nn.train(
-            X, y, epochs=50, lr=0.1, batch_size=10
-        )
+        self.nn.train(X, y, epochs=50, lr=0.1, batch_size=10)
         loss_after = np.mean(np.square(y - self.nn.forward(X)))
         self.assertLess(loss_after, loss_before)
 
