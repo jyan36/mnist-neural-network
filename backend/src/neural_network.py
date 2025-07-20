@@ -65,7 +65,9 @@ class NeuralNetwork:
             grads_b[i] = np.sum(delta, axis=0, keepdims=True)
 
             if i > 0:
-                delta = np.dot(delta, self.weights[i].T) * self.relu_deriv(self.z[i - 1])
+                delta = np.dot(delta, self.weights[i].T) * self.relu_deriv(
+                    self.z[i - 1]
+                )
 
         for i in range(self.num_layers):
             self.weights[i] -= lr * grads_w[i]
