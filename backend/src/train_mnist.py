@@ -1,5 +1,5 @@
-from load_mnist import load_data
-from neural_network import NeuralNetwork
+from src.load_mnist import load_data
+from src.neural_network import NeuralNetwork
 import numpy as np
 
 X_train, y_train, X_test, y_test = load_data()
